@@ -1,3 +1,17 @@
+<?php
+include 'Includes/validation.php';
+
+$fname = $uname = $email = "";
+if (isset($_GET['fname'])){
+    $fname = $_GET['fname'];
+}
+if (isset($_GET['uname'])){
+    $uname = $_GET['uname'];
+}
+if (isset($_GET['email'])){
+    $email = $_GET['email'];
+}
+?>
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -13,25 +27,25 @@
     <link rel="stylesheet" type="text/css" href="CSS/style.css">
 </head>
 
-<body>
+<body class="register">
     <article class="wrapper">
         <article class="form-holder">
             <h2>Registreren</h2>
             <form class="form" action="Actions/signup.php" method="POST">
                 <?php
                 if (isset($_GET['error'])) { ?>
-                <p class="error"><?php echo $_GET['error']; ?></p>
+                    <p class="error"><?php echo Validation::clean($_GET['error']); ?></p>
                 <?php } ?>
                 <article class="form-group">
-                    <input type="text" placeholder="volledige naam" name="fullname" >
+                    <input type="text" placeholder="volledige naam" name="fullname" value="<?= $fname ?>">
                 </article>
 
                 <article class="form-group">
-                    <input type="text" placeholder="gebruikersnaam" id="username" name="username" >
+                    <input type="text" placeholder="gebruikersnaam" id="username" name="username" value="<?= $uname ?>">
                 </article>
 
                 <article class="form-group">
-                    <input type="email" placeholder="e-mailadres" id="email" name="email" >
+                    <input type="email" placeholder="e-mailadres" id="email" name="email" value="<?= $email ?>">
                 </article>
 
                 <article class="form-group">

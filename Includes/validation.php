@@ -33,7 +33,7 @@ class Validation {
         }
     }
     static function password($str){
-        // min 4 karakters, 1 kleine en hoofdletter, speciaal teken en cijfertje
+        // min 4 karakters, 1 kleine en hoofdletter, speciaal teken en cijfertje like bijvoorbeeld Test@pass1
         $password_regex = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{4,}$/";
         if (preg_match($password_regex,$str)) {
             return true;

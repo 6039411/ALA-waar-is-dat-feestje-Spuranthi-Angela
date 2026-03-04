@@ -1,6 +1,8 @@
 <?php
 include '../Includes/validation.php';
 include '../Includes/util.php';
+include '../Includes/database.php';
+include '../Models/userConn.php';
 
 $validation = new Validation();
 
@@ -28,6 +30,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }else if (!Validation::match($password, $confirmPassword)){
         $em = "Wachtwoorden komen niet overeen.";
         util::redirect("../registreren.php", "error", $em, $data);
+    } else{
+        $db = new Database();   
+        $conn = $db->connect();
+        $user = new User($conn);
+
+        $pass = password_hash($password, PASSWORD_DEFAULT);
+        $user_data = [$username, $pass, $fullname, $email];
+        $res = $user->insert($user_data);
+        if($res){
+            $sm = "Gelukt! U kunt nu inloggen met uw account.";
+            util::redirect("../registreren.php", "success", $sm);
+        }else{
+            $em = "Er is een error gekomen...";
+            util::redirect("../registreren.php", "error", $em, $data);
+        }
     }
 }else{
     $em = "Er is een fout opgetreden.";

@@ -61,24 +61,32 @@
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 .form-group a{
-    font-size: 17px;
-    text-decoration: none;
-    color: #555;
-    background-color: #7ea2f1;
+  font-size: 17px;
+  text-decoration: none;
+  color: #555;
+  background-color: #7ea2f1;
 }
 .form-group a:hover{
-    text-decoration: underline;
-    color: #f7ff69;
-    background-color: #7ea2f1;
+  text-decoration: underline;
+  color: #f7ff69;
+  background-color: #7ea2f1;
 }
 .form {
   background-color: #7ea2f1;
 }
 .error {
-    background-color: black;
-    padding: 10px;
-    width: 90%;
-    border-radius: 7px;
-    color: red;
-    margin: 2px auto;
+  background-color: rgb(251, 142, 142);
+  padding: 10px;
+  width: 90%;
+  border-radius: 7px;
+  color: red;
+  margin: 2px auto;
+}
+.success {
+  background-color: rgb(87, 243, 131);
+  padding: 10px;
+  width: 90%;
+  border-radius: 7px;
+  color: green;
+  margin: 2px auto;
 }

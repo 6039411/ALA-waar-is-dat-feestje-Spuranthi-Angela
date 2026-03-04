@@ -12,6 +12,7 @@ if (isset($_GET['email'])){
     $email = $_GET['email'];
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -32,10 +33,16 @@ if (isset($_GET['email'])){
         <article class="form-holder">
             <h2>Registreren</h2>
             <form class="form" action="Actions/signup.php" method="POST">
+
                 <?php
                 if (isset($_GET['error'])) { ?>
                     <p class="error"><?php echo Validation::clean($_GET['error']); ?></p>
                 <?php } ?>
+                <?php
+                if (isset($_GET['success'])) { ?>
+                    <p class="success"><?php echo Validation::clean($_GET['success']); ?></p>
+                <?php } ?>
+
                 <article class="form-group">
                     <input type="text" placeholder="volledige naam" name="fullname" value="<?= $fname ?>">
                 </article>
@@ -57,7 +64,7 @@ if (isset($_GET['email'])){
                 </article>
 
                 <article class="form-group">
-                    <button type="submit">Registreren</button>
+                    <button type="submit">Account registreren</button>
                 </article>
                 <article class="form-group">
                     <a href="inloggen.php">Log hier in.</a>

@@ -1,6 +1,6 @@
 <?php
 
-class Validation {
+class Helper {
     static function clean($str){
         $str = trim($str);
         $str = stripslashes($str);

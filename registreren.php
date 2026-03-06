@@ -1,5 +1,5 @@
 <?php
-include 'Includes/validation.php';
+include 'Includes/helper.php';
 
 $fname = $uname = $email = "";
 if (isset($_GET['fname'])){
@@ -36,11 +36,11 @@ if (isset($_GET['email'])){
 
                 <?php
                 if (isset($_GET['error'])) { ?>
-                    <p class="error"><?php echo Validation::clean($_GET['error']); ?></p>
+                    <p class="error"><?php echo Helper::clean($_GET['error']); ?></p>
                 <?php } ?>
                 <?php
                 if (isset($_GET['success'])) { ?>
-                    <p class="success"><?php echo Validation::clean($_GET['success']); ?></p>
+                    <p class="success"><?php echo Helper::clean($_GET['success']); ?></p>
                 <?php } ?>
 
                 <article class="form-group">

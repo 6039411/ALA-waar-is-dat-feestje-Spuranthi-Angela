@@ -18,7 +18,7 @@
 <nav>
 <a href="index.php">Home</a>
 <a href="#">Dashboard</a>
-<a href="#">Inloggen</a>
+<a href="inloggen.php">Inloggen</a>
 <a href="registreren.php">Registreren</a>
 </nav>
 </header>

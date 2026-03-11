@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['user_email'] = $user_data['user_email'];
             $_SESSION['user_full_name'] = $user_data['user_full_name'];
 
-            $sm = "Pweh eindelijk ingelogd!";
+            $sm = "Ingelogd als gebruiker!";
             util::redirect("../index.php", "success", $sm);
         }else{
             echo($auth);

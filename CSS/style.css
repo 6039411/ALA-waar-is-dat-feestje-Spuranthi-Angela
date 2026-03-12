@@ -340,3 +340,13 @@ nav a:hover {
 #day-popup label {
     color: #414141de; /* specifiek voor kopjes, labels en datum */
 }
+
+/* Calendar Activity */
+.calendar-activity{
+  background: #4CAF50;
+  color: white;
+  font-size: 12px;
+  padding: 3px;
+  margin-top: 4px;
+  border-radius: 4px;
+}

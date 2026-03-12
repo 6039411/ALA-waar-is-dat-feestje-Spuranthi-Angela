@@ -1,6 +1,3 @@
-index
-
-
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -121,7 +118,7 @@ index
     <h2>Nieuwe Activiteit</h2>
     <p id="selected-date"></p>
 
-    <form id="activity-form" action="opslaan.php" method="POST">
+    <form id="activity-form" action="Models/activiteitConn.php" method="POST">
 
       <input type="hidden" name="activity-date" id="activity-date">
 

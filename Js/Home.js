@@ -43,3 +43,28 @@ days.forEach(day => {
 closeBtn.addEventListener("click", () => {
   popup.classList.remove("active");
 });
+
+
+var dagen = document.querySelectorAll(".day");
+
+dagen.forEach(function(dag) {
+
+    dag.addEventListener("click", function() {
+
+        var dagNummer = this.innerText;
+
+        var vandaag = new Date();
+        var jaar = vandaag.getFullYear();
+        var maand = vandaag.getMonth() + 1;
+
+        var datum = jaar + "-" + maand + "-" + dagNummer;
+
+        document.getElementById("activity-date").value = datum;
+
+        document.getElementById("selected-date").innerText = "Datum: " + datum;
+
+        document.getElementById("day-popup").style.display = "block";
+
+    });
+
+});

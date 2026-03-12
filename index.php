@@ -10,7 +10,7 @@
   <meta name="author" content="Angela Bansie">
   <title>Home pagina</title>
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/Home.js" defer></script>
+  <script type="module" src="js/Home.js"></script>
 </head>
 <body>
 

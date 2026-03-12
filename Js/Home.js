@@ -1,7 +1,42 @@
 
 // maand dropdown selector
+//pop up registeren activiteit
+import Activity from "./activityClass.js";
+import Calendar from "./calendarClass.js";
 
+const calendar = new Calendar();
+const form = document.getElementById("activity-form");
 
+form.addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    const name = document.getElementById("activity-name").value;
+    const type = document.getElementById("activity-type").value;
+    const time = document.getElementById("activity-time").value;
+    const status = document.getElementById("activity-status").value;
+    const description = document.getElementById("activity-description").value;
+
+    const dateText = document.getElementById("selected-date").textContent;
+    const date = dateText.match(/\d+/)[0];
+
+    const activity = new Activity(
+        name,
+        type,
+        time,
+        status,
+        description,
+        date
+    );
+
+    calendar.addActivity(activity);
+
+    popup.classList.remove("active");
+
+    form.reset();
+
+});
+// maand dropdown selector
 const currentMonth = document.getElementById("current-month");
 const dropdown = document.getElementById("month-dropdown");
 

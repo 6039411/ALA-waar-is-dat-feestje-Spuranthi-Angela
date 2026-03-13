@@ -86,3 +86,4 @@ days.forEach(day => {
 closeBtn.addEventListener("click", () => {
   popup.classList.remove("active");
 });
+

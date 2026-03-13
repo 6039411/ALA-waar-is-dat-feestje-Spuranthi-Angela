@@ -1,33 +1,51 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 require_once __DIR__ . "/../Includes/database.php";
+
+class Activiteit {
+
+    private $conn;
+    private $table_name = "activiteit";
+
+    function __construct($db_conn) {
+        $this->conn = $db_conn;
+    }
+
+    function insert($data) {
+        try {
+            $sql = "INSERT INTO " . $this->table_name . " 
+                    (Naam, Type, Tijd, Beschrijving, Datum)
+                    VALUES (?, ?, ?, ?, ?)";
+
+            $stmt = $this->conn->prepare($sql);
+            return $stmt->execute($data);
+
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            return false;
+        }
+    }
+}
 
 $database = new Database();
 $conn = $database->connect();
+$activiteit = new Activiteit($conn);
 
-// Check of het formulier is verzonden
-if(isset($_POST['activity-name'])) {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $naam = $_POST['activity-name'];
-    $type = $_POST['activity-type'];
-    $tijd = $_POST['activity-time'];
+    $naam        = $_POST['activity-name'];
+    $type        = $_POST['activity-type'];
+    $tijd        = $_POST['activity-time'];
     $beschrijving = $_POST['activity-description'];
-    $datum = $_POST['activity-date'];
+    $datum       = $_POST['activity-date'];
 
-    // Let op hoofdletters zoals in de database
-    $sql = "INSERT INTO activiteiten (Naam, Type, Tijd, Beschrijving, Datum)
-            VALUES (:naam, :type, :tijd, :beschrijving, :datum)";
+    $data = [$naam, $type, $tijd, $beschrijving, $datum];
 
-    $stmt = $conn->prepare($sql);
-
-    $stmt->bindParam(':naam', $naam);
-    $stmt->bindParam(':type', $type);
-    $stmt->bindParam(':tijd', $tijd);
-    $stmt->bindParam(':beschrijving', $beschrijving);
-    $stmt->bindParam(':datum', $datum);
-
-    $stmt->execute();
-
-    echo "Activiteit opgeslagen!";
-} else {
-    echo "Formulier niet verzonden!";
+    if ($activiteit->insert($data)) {
+        echo "succes";
+    } else {
+        echo "mislukt";
+    }
 }

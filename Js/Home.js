@@ -1,5 +1,4 @@
 
-//pop up registeren activiteit
 import Activity from "./activityClass.js";
 import Calendar from "./calendarClass.js";
 
@@ -16,7 +15,7 @@ form.addEventListener("submit", function(e) {
     const description = document.getElementById("activity-description").value;
     const date = document.getElementById("activity-date").value;
 
-    // DEBUG - verwijder later
+    // meestal voor de debug
     console.log("Formulier data:", { name, type, time, status, description, date });
 
     const formData = new FormData(form);
@@ -28,7 +27,7 @@ form.addEventListener("submit", function(e) {
     })
     .then(response => response.text())
     .then(result => {
-        console.log("Server antwoord:", result); // Wat zegt de server?
+        console.log("Server antwoord:", result);
         if (result === "succes") {
             const activity = new Activity(name, type, time, status, description, date);
             calendar.addActivity(activity);
@@ -72,17 +71,9 @@ document.addEventListener("click", (e) => {
     }
 });
 
-
-
-
-
-
-
-
 // pop up
 
-
-const dagen = document.querySelectorAll(".day");
+const days = document.querySelectorAll(".day");
 const popup = document.getElementById("day-popup");
 const closeBtn = document.querySelector("#day-popup .close-popup");
 const selectedDate = document.getElementById("selected-date");
@@ -99,12 +90,11 @@ days.forEach(dag => {
         const dagFormatted = String(dagNummer).padStart(2, "0");
         const datum = `${jaar}-${maandFormatted}-${dagFormatted}`;
 
-        activityDateInput.value = datum;           // voor PHP/database
-        selectedDate.innerText = "Datum: " + datum; // voor weergave
+        activityDateInput.value = datum;
+        selectedDate.innerText = "Datum: " + datum; 
         popup.classList.add("active");
     });
 });
-
 
 closeBtn.addEventListener("click", () => {
     popup.classList.remove("active");

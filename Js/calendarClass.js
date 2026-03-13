@@ -20,7 +20,7 @@ export default class Calendar {
                 activityElement.classList.add("calendar-activity");
 
                 activityElement.innerHTML =
-                    `<strong>${activity.name}</strong><br>
+                    `${activity.name}<br>
                      ${activity.time}`;
 
                 day.appendChild(activityElement);

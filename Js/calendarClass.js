@@ -1,15 +1,16 @@
 export default class Calendar {
+
     constructor() {
         this.activities = [];
     }
 
     addActivity(activity) {
         this.activities.push(activity);
-        this.executeActivity(activity);
+        this.renderActivity(activity);
     }
 
-    executeActivity(activity) {
-        
+    renderActivity(activity) {
+
         const days = document.querySelectorAll(".day");
 
         days.forEach(day => {
@@ -20,14 +21,33 @@ export default class Calendar {
                 activityElement.classList.add("calendar-activity");
 
                 activityElement.innerHTML =
-                    `${activity.name}<br>
-                     ${activity.time}`;
+                    `${activity.name}<br>${activity.time}`;
+
+                activityElement.addEventListener("click", (e) => {
+
+                    e.stopPropagation();
+
+                    this.openDetail(activity);
+
+                });
 
                 day.appendChild(activityElement);
 
             }
 
         });
+
+    }
+
+    openDetail(activity){
+
+        document.getElementById("detail-name").textContent = activity.name;
+        document.getElementById("detail-type").textContent = activity.type;
+        document.getElementById("detail-time").textContent = activity.time;
+        document.getElementById("detail-status").textContent = activity.status;
+        document.getElementById("detail-description").textContent = activity.description;
+
+        document.getElementById("activity-detail").classList.add("active");
 
     }
 

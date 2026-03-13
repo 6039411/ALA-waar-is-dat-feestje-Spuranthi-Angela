@@ -36,6 +36,14 @@ form.addEventListener("submit", function(e) {
     form.reset();
 
 });
+
+const closeDetail = document.getElementById("close-detail");
+
+closeDetail.addEventListener("click", () => {
+
+    document.getElementById("activity-detail").classList.remove("active");
+
+});
 // maand dropdown selector
 const currentMonth = document.getElementById("current-month");
 const dropdown = document.getElementById("month-dropdown");

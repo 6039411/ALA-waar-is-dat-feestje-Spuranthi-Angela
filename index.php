@@ -138,6 +138,7 @@
       <label for="activity-description">Beschrijving</label>
       <textarea id="activity-description" name="activity-description" placeholder="Beschrijving activiteit"></textarea>
 
+      <input type="hidden" id="activity-date" name="activity-date">
       <button type="submit">Activiteit opslaan</button>
     </form>
   </div>

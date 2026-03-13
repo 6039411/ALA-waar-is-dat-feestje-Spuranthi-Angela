@@ -10,34 +10,26 @@ export default class Calendar {
     }
 
     renderActivity(activity) {
+    const days = document.querySelectorAll(".day");
 
-        const days = document.querySelectorAll(".day");
+    days.forEach(day => {
 
-        days.forEach(day => {
+        const dagNummer = String(parseInt(activity.date.split("-")[2]));
 
-            if (day.textContent.trim() === activity.date) {
+        if (day.textContent.trim() === dagNummer) {
+            const activityElement = document.createElement("div");
+            activityElement.classList.add("calendar-activity");
+            activityElement.innerHTML = `${activity.name}<br>${activity.time}`;
 
-                const activityElement = document.createElement("div");
-                activityElement.classList.add("calendar-activity");
+            activityElement.addEventListener("click", (e) => {
+                e.stopPropagation();
+                this.openDetail(activity);
+            });
 
-                activityElement.innerHTML =
-                    `${activity.name}<br>${activity.time}`;
-
-                activityElement.addEventListener("click", (e) => {
-
-                    e.stopPropagation();
-
-                    this.openDetail(activity);
-
-                });
-
-                day.appendChild(activityElement);
-
-            }
-
-        });
-
-    }
+            day.appendChild(activityElement);
+        }
+    });
+}
 
     openDetail(activity){
 

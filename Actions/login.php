@@ -18,8 +18,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $em = "Ongeldige Wachtwoord.";
         util::redirect("../inloggen.php", "error", $em);
     }else{
-        $db = new Database();   
-        $conn = $db->connect();
         $user = new User($conn);
         $auth = $user->auth($username, $password);
         

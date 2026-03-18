@@ -28,8 +28,7 @@ class Activiteit {
     }
 }
 
-$database = new Database();
-$conn = $database->connect();
+$conn = Database::connect();
 $activiteit = new Activiteit($conn);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

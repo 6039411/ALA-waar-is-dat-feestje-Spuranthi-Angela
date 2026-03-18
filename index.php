@@ -15,55 +15,55 @@
     
 
 <header>
-<h1>Activiteiten Kalender</h1>
-<nav>
-<a href="index.php">Home</a>
-<a href="#">Inloggen</a>
-<a href="registreren.php">Registreren</a>
-</nav>
+  <h1>Activiteiten Kalender</h1>
+  <nav>
+    <a href="index.php">Home</a>
+    <a href="#">Inloggen</a>
+    <a href="registreren.php">Registreren</a>
+  </nav>
 </header>
 
 <article class="filters">
-<input type="text" placeholder="Zoek activiteit...">
-<select>
-<option>Alle types</option>
-<option>Binnen</option>
-<option>Buiten</option>
-</select>
-<button>Filter</button>
+  <input type="text" placeholder="Zoek activiteit...">
+  <select>
+    <option>Alle types</option>
+    <option>Binnen</option>
+    <option>Buiten</option>
+  </select>
+  <button>Filter</button>
 </article>
 
 <article class="calendar">
 <article class="calendar-header">
 <button>&lt;</button>
 <article class="month-selector">
-<h2 id="current-month">Februari 2026</h2>
-<article class="month-dropdown" id="month-dropdown">
-<article data-month="Januari 2026">Januari 2026</article>
-<article data-month="Februari 2026">Februari 2026</article>
-<article data-month="Maart 2026">Maart 2026</article>
-<article data-month="April 2026">April 2026</article>
-<article data-month="Mei 2026">Mei 2026</article>
-<article data-month="Juni 2026">Juni 2026</article>
-<article data-month="Juli 2026">Juli 2026</article>
-<article data-month="Augustus 2026">Augustus 2026</article>
-<article data-month="September 2026">September 2026</article>
-<article data-month="Oktober 2026">Oktober 2026</article>
-<article data-month="November 2026">November 2026</article>
-<article data-month="December 2026">December 2026</article>
+<h2 id="current-month">Maart 2026</h2>
+  <article class="month-dropdown" id="month-dropdown">
+  <article data-month="Januari 2026">Januari 2026</article>
+  <article data-month="Februari 2026">Februari 2026</article>
+  <article data-month="Maart 2026">Maart 2026</article>
+  <article data-month="April 2026">April 2026</article>
+  <article data-month="Mei 2026">Mei 2026</article>
+  <article data-month="Juni 2026">Juni 2026</article>
+  <article data-month="Juli 2026">Juli 2026</article>
+  <article data-month="Augustus 2026">Augustus 2026</article>
+  <article data-month="September 2026">September 2026</article>
+  <article data-month="Oktober 2026">Oktober 2026</article>
+  <article data-month="November 2026">November 2026</article>
+  <article data-month="December 2026">December 2026</article>
 </article>
 </article>
-<button>&gt;</button>
+  <button>&gt;</button>
 </article>
 
 <article class="calendar-days">
-<article>Zo</article>
-<article>Ma</article>
-<article>Di</article>
-<article>Wo</article>
-<article>Do</article>
-<article>Vr</article>
-<article>Za</article>
+  <article>Zo</article>
+  <article>Ma</article>
+  <article>Di</article>
+  <article>Wo</article>
+  <article>Do</article>
+  <article>Vr</article>
+  <article>Za</article>
 </article>
 
 <article class="calendar-grid">
@@ -79,25 +79,43 @@
 <article class="day">10</article>
 <article class="day">11</article>
 <article class="day">12</article>
+<article class="day">13</article>
+<article class="day">14</article>
+<article class="day">15</article>
+<article class="day">16</article>
+<article class="day">17</article>
+<article class="day">18</article>
+<article class="day">19</article>
+<article class="day">20</article>
+<article class="day">21</article>
+<article class="day">22</article>
+<article class="day">23</article>
+<article class="day">24</article>
+<article class="day">25</article>
+<article class="day">26</article>
+<article class="day">27</article>
+<article class="day">28</article>
+<article class="day">29</article>
+<article class="day">30</article>
 </article>
 </article>
 
 <article class="dashboard">
-<h2>Mijn Dashboard</h2>
-<article class="dashboard-cards">
-<article class="card">
-<h3>Mijn Activiteiten</h3>
-<p>Bekijk en beheer je aangemelde activiteiten.</p>
-</article>
-<article class="card">
-<h3>Activiteit Aanmaken</h3>
-<p>Organiseer een nieuwe activiteit.</p>
-</article>
-<article class="card">
-<h3>Notificaties</h3>
-<p>Bekijk recente meldingen.</p>
-</article>
-</article>
+  <h2>Mijn Dashboard</h2>
+  <article class="dashboard-cards">
+  <article class="card">
+    <h3>Mijn Activiteiten</h3>
+    <p>Bekijk en beheer je aangemelde activiteiten.</p>
+  </article>
+  <article class="card">
+    <h3>Activiteit Aanmaken</h3>
+    <p>Organiseer een nieuwe activiteit.</p>
+  </article>
+  <article class="card">
+    <h3>Notificaties</h3>
+    <p>Bekijk recente meldingen.</p>
+  </article>
+  </article>
 </article>
 
 <!-- pop up form -->

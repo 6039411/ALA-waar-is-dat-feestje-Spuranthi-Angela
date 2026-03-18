@@ -31,8 +31,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $em = "Wachtwoorden komen niet overeen.";
         util::redirect("../registreren.php", "error", $em, $data);
     } else{
-        $db = new Database();   
-        $conn = $db->connect();
         $user = new User($conn);
 
         $pass = password_hash($password, PASSWORD_DEFAULT);

@@ -1,3 +1,4 @@
+import { laadWeer } from "./WeerApi.js";
 export default class Calendar {
 
     constructor() {
@@ -37,6 +38,17 @@ export default class Calendar {
         document.getElementById("detail-time").textContent = activity.time;
         document.getElementById("detail-status").textContent = activity.status;
         document.getElementById("detail-description").textContent = activity.description;
+
+    const weerDiv = document.getElementById("weer");
+    const type = activity.type.trim().toLowerCase();
+
+    if (type === "buiten") {
+        weerDiv.style.display = "block";
+        laadWeer(); 
+    } else {
+        weerDiv.style.display = "none";
+        weerDiv.innerHTML = "";
+    }
 
         document.getElementById("activity-detail").classList.add("active");
 

@@ -424,6 +424,20 @@ nav a:hover {
 
 .calendar-activity {
   background: linear-gradient(135deg, #81e4e7, #5ccfd3);
+/* Alle teksten in de popup zwart */
+#day-popup {
+    color: #000000; /* Zorgt dat alle tekst in de popup zwart is */
+}
+
+#day-popup h2,
+#day-popup p,
+#day-popup label {
+    color: #414141de; /* specifiek voor kopjes, labels en datum */
+}
+
+.calendar-activity{
+  background: #81e4e7;
+  color: rgb(0, 0, 0);
   font-size: 12px;
   padding: 5px 6px;
   margin-top: 4px;
@@ -457,21 +471,6 @@ nav a:hover {
   font-size: 32px;
 }
 
-
-#close-detail {
-    font-size: 28px;
-    font-weight: bold;
-    color: #333;
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 15px;
-}
-
-#close-detail:hover {
-    color: red;
-    transform: scale(1.2);
-}
 
 #close-detail {
     font-size: 28px;

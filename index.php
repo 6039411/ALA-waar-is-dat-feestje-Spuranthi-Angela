@@ -19,7 +19,7 @@
 <h1>Activiteiten Kalender</h1>
 <nav>
 <a href="index.php">Home</a>
-<a href="login.php">Inloggen</a>
+<a href="inloggen.php">Inloggen</a>
 <a href="registreren.php">Registreren</a>
 </nav>
 </header>

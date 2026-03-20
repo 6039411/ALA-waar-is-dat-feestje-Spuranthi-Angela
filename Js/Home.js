@@ -1,10 +1,20 @@
-
 import Activity from "./activityClass.js";
 import Calendar from "./calendarClass.js";
 
+// variebalen
 const calendar = new Calendar();
 const form = document.getElementById("activity-form");
+const popup = document.getElementById("day-popup");
+const closeBtn = document.querySelector("#day-popup .close-popup");
+const selectedDate = document.getElementById("selected-date");
+const activityDateInput = document.getElementById("activity-date");
+const days = document.querySelectorAll(".day");
+const closeDetail = document.getElementById("close-detail");
+const currentMonth = document.getElementById("current-month");
+const dropdown = document.getElementById("month-dropdown");
 
+
+// activiteit opslaan
 form.addEventListener("submit", function(e) {
     e.preventDefault();
 
@@ -15,7 +25,6 @@ form.addEventListener("submit", function(e) {
     const description = document.getElementById("activity-description").value;
     const date = document.getElementById("activity-date").value;
 
-    //ff voor de debug
     console.log("Formulier data:", { name, type, time, status, description, date });
 
     const formData = new FormData(form);
@@ -43,17 +52,14 @@ form.addEventListener("submit", function(e) {
     });
 });
 
-const closeDetail = document.getElementById("close-detail");
 
+// activiteit detail close
 closeDetail.addEventListener("click", () => {
     document.getElementById("activity-detail").classList.remove("active");
 });
 
-// maand dropdown selector
 
-const currentMonth = document.getElementById("current-month");
-const dropdown = document.getElementById("month-dropdown");
-
+// maand dropdown
 currentMonth.addEventListener("click", () => {
     dropdown.style.display =
         dropdown.style.display === "block" ? "none" : "block";
@@ -65,22 +71,15 @@ dropdown.querySelectorAll("article").forEach(item => {
         dropdown.style.display = "none";
     });
 });
- 
+
 document.addEventListener("click", (e) => {
     if (!e.target.closest(".month-selector")) {
         dropdown.style.display = "none";
     }
 });
 
-// Dit is die ene pop up voor bij aanmaken
 
-
-const days = document.querySelectorAll(".day");
-const popup = document.getElementById("day-popup");
-const closeBtn = document.querySelector("#day-popup .close-popup");
-const selectedDate = document.getElementById("selected-date");
-const activityDateInput = document.getElementById("activity-date");
-
+// pop up
 days.forEach(dag => {
     dag.addEventListener("click", () => {
         const dagNummer = dag.innerText.trim();
@@ -93,11 +92,13 @@ days.forEach(dag => {
         const datum = `${jaar}-${maandFormatted}-${dagFormatted}`;
 
         activityDateInput.value = datum;
-        selectedDate.innerText = "Datum: " + datum; 
+        selectedDate.innerText = "Datum: " + datum;
         popup.classList.add("active");
     });
 });
 
+
+// popup close
 closeBtn.addEventListener("click", () => {
     popup.classList.remove("active");
 });

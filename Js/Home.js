@@ -16,6 +16,7 @@ form.addEventListener("submit", function(e) {
     const date = document.getElementById("activity-date").value;
 
     // meestal voor de debug
+    
     console.log("Formulier data:", { name, type, time, status, description, date });
 
     const formData = new FormData(form);
@@ -50,6 +51,7 @@ closeDetail.addEventListener("click", () => {
 });
 
 // maand dropdown selector
+
 const currentMonth = document.getElementById("current-month");
 const dropdown = document.getElementById("month-dropdown");
 
@@ -72,6 +74,7 @@ document.addEventListener("click", (e) => {
 });
 
 // pop up
+
 
 const days = document.querySelectorAll(".day");
 const popup = document.getElementById("day-popup");

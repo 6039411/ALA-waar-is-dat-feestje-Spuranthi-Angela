@@ -28,6 +28,9 @@ class Activiteit {
     }
 }
 
+
+
+
 $database = new Database();
 $conn = $database->connect();
 $activiteit = new Activiteit($conn);

@@ -265,125 +265,212 @@ nav a:hover {
 
 /* Pop up */
 
-/* popup container gecentreerd */
-#day-popup {
-  display: none; /* standaard verborgen */
+
+#day-popup,
+.activity-detail {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(20, 25, 40, 0.55);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 1000;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
 }
 
-/* popup box */
-#day-popup .popup-content {
-  background: #fff;
-  padding: 25px;
-  border-radius: 10px;
-  max-width: 500px;
-  width: 130%;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  position: relative;
+
+#day-popup.active,
+.activity-detail.active {
+  opacity: 1;
+  visibility: visible;
 }
 
-/* sluitknop */
-#day-popup .close-popup {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+
+.popup-content,
+.detail-content {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 18px;
+  width: 100%;
+  max-width: 480px;
+
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  transform: translateY(20px) scale(0.95);
+  transition: all 0.3s ease;
+}
+
+
+.detail-content {
+  max-width: 600px;
+}
+
+/* Animatie */
+#day-popup.active .popup-content,
+.activity-detail.active .detail-content {
+  transform: translateY(0) scale(1);
+}
+
+
+.popup-content h2,
+.detail-content h2 {
+  margin-bottom: 10px;
   font-size: 22px;
-  cursor: pointer;
-  color: #f44336;
+  color: #1f2a44;
 }
 
-/* form layout */
-#day-popup .popup-content form {
+
+#selected-date {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 15px;
+}
+
+
+.close-popup,
+#close-detail {
+  position: absolute;
+  top: 15px;
+  right: 18px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #9ca3af;
+  transition: 0.2s;
+}
+
+.close-popup:hover,
+#close-detail:hover {
+  color: #ef4444;
+}
+
+
+.popup-content form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
-#day-popup .popup-content input,
-#day-popup .popup-content select,
-#day-popup .popup-content textarea {
-  padding: 8px;
-  width: 100%;
-  border-radius: 5px;
-  border: 1px solid #7EA2F1;
+
+.popup-content label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
 }
+
+
+.popup-content input,
+.popup-content select,
+.popup-content textarea {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+
+.popup-content input:focus,
+.popup-content select:focus,
+.popup-content textarea:focus {
+  border-color: #7EA2F1;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(126,162,241,0.2);
+}
+
 
 #day-popup button {
-  padding: 10px;
-  background: #7EA2F1;
-  color: #fff;
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 10px;
   border: none;
-  border-radius: 5px;
+  background: linear-gradient(135deg, #7EA2F1, #5a78d6);
+  color: white;
+  font-weight: 600;
   cursor: pointer;
+  transition: 0.2s;
 }
 
 #day-popup button:hover {
-  background: #6783be;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-/* popup zichtbaar */
-#day-popup.active {
-  display: block;
+
+.detail-content p {
+  margin: 8px 0;
+  color: #374151;
+  font-size: 14px;
 }
 
-/* Alle teksten in de popup zwart */
-#day-popup {
-    color: #000000; /* Zorgt dat alle tekst in de popup zwart is */
+.detail-content strong {
+  color: #111827;
 }
 
-#day-popup h2,
-#day-popup p,
-#day-popup label {
-    color: #414141de; /* specifiek voor kopjes, labels en datum */
-}
 
-.calendar-activity{
-  background: #81e4e7;
-  color: rgb(0, 0, 0);
+#detail-status {
+  padding: 4px 10px;
+  border-radius: 20px;
   font-size: 12px;
-  padding: 3px;
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+
+.calendar-activity {
+  background: linear-gradient(135deg, #81e4e7, #5ccfd3);
+  font-size: 12px;
+  padding: 5px 6px;
   margin-top: 4px;
-  border-radius: 4px;
-  cursor:pointer;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
-.activity-detail{
-  position: fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background: rgba(0,0,0,0.5);
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  opacity:0;
-  visibility:hidden;
-  transition: opacity 0.5s ease;
+.calendar-activity:hover {
+  transform: scale(1.05);
 }
 
-.activity-detail.active{
-  opacity:1;
-  visibility:visible;
+/* weer  */
+
+#weer {
+  color: #1f2937; 
 }
 
-.detail-content{
-  background:#81e4e7;
-  padding:25px;
-  border-radius:8px;
-  width:800px;
-  transform: scale(0.9);
-  transition: transform 0.3s ease;
+#weer .temp {
+  font-size: 28px;
+  font-weight: bold;
+  color: #111827; 
 }
 
-.activity-detail.active .detail-content{
-  transform: scale(1);
+#weer .beschrijving {
+  color: #6b7280; 
+  font-size: 14px;
+}
+
+#weer .icon {
+  font-size: 32px;
+}
+
+
+#close-detail {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+
+#close-detail:hover {
+    color: red;
+    transform: scale(1.2);
 }
 
 #close-detail {

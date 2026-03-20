@@ -50,6 +50,7 @@ closeDetail.addEventListener("click", () => {
 });
 
 // maand dropdown selector
+
 const currentMonth = document.getElementById("current-month");
 const dropdown = document.getElementById("month-dropdown");
 
@@ -72,6 +73,7 @@ document.addEventListener("click", (e) => {
 });
 
 // Dit is die ene pop up voor bij aanmaken
+
 
 const days = document.querySelectorAll(".day");
 const popup = document.getElementById("day-popup");

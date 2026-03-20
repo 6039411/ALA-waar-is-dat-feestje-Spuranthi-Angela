@@ -10,17 +10,18 @@
   <title>Home pagina</title>
   <link rel="stylesheet" href="css/style.css">
   <script type="module" src="js/Home.js"></script>
+  <script type="module" src="js/WeerApi.js"></script>
 </head>
 <body>
     
 
 <header>
-  <h1>Activiteiten Kalender</h1>
-  <nav>
-    <a href="index.php">Home</a>
-    <a href="#">Inloggen</a>
-    <a href="registreren.php">Registreren</a>
-  </nav>
+<h1>Activiteiten Kalender</h1>
+<nav>
+<a href="index.php">Home</a>
+<a href="login.php">Inloggen</a>
+<a href="registreren.php">Registreren</a>
+</nav>
 </header>
 
 <article class="filters">
@@ -170,6 +171,10 @@
     <p><strong>Status:</strong> <span id="detail-status"></span></p>
     <p><strong>Beschrijving:</strong></p>
     <p id="detail-description"></p>
+
+
+    <article id="weer" class="weer-card"></article>
+
 
   </div>
 </article>

@@ -119,7 +119,6 @@
   </article>
 </article>
 
-<!-- pop up form -->
 
 <article id="day-popup" class="popup">
   <div class="popup-content">

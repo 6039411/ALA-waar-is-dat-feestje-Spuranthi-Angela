@@ -15,13 +15,13 @@ form.addEventListener("submit", function(e) {
     const description = document.getElementById("activity-description").value;
     const date = document.getElementById("activity-date").value;
 
-    // meestal voor de debug
+    //ff voor de debug
     console.log("Formulier data:", { name, type, time, status, description, date });
 
     const formData = new FormData(form);
     console.log("Fetch wordt gestart...");
 
-    fetch("Models/activiteitConn.php", {
+    fetch("Actions/saveActiviteit.php", {
         method: "POST",
         body: formData
     })
@@ -71,7 +71,7 @@ document.addEventListener("click", (e) => {
     }
 });
 
-// pop up
+// Dit is die ene pop up voor bij aanmaken
 
 const days = document.querySelectorAll(".day");
 const popup = document.getElementById("day-popup");

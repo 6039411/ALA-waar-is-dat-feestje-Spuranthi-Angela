@@ -17,10 +17,10 @@ export default class Calendar {
         const dagNummer = String(parseInt(activity.date.split("-")[2]));
 
         if (day.textContent.trim() === dagNummer) {
-            const activityElement = document.createElement("div");
+            const activityElement = document.createElement("article");
             activityElement.classList.add("calendar-activity");
-            activityElement.innerHTML = `${activity.name}<br>${activity.time}`;
-
+            activityElement.innerHTML = `${activity.name}<br>
+                                         ${activity.time}`;
             activityElement.addEventListener("click", (e) => {
                 e.stopPropagation();
                 this.openDetail(activity);
@@ -32,7 +32,6 @@ export default class Calendar {
 }
 
     openDetail(activity){
-
         document.getElementById("detail-name").textContent = activity.name;
         document.getElementById("detail-type").textContent = activity.type;
         document.getElementById("detail-time").textContent = activity.time;

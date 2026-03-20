@@ -1,9 +1,6 @@
 <?php
 session_start(); 
-include '../Includes/helper.php';
-include '../Includes/util.php';
-include '../Includes/database.php';
-include '../Models/userConn.php';
+require_once '../autoloader.php';
 
 $helper = new Helper();
 

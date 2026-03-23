@@ -74,6 +74,15 @@
 .form {
   background-color: #7ea2f1;
 }
+.return_button a{
+  font-size: 17px;
+  text-decoration: none;
+  color: #555;
+}
+.return_button a:hover{
+  text-decoration: underline;
+  color: #274c9b;
+}
 .error {
   background-color: rgb(251, 142, 142);
   padding: 10px;

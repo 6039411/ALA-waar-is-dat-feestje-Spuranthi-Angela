@@ -29,6 +29,9 @@ if (isset($_GET['email'])){
 </head>
 
 <body class="register">
+    <article class="return_button">
+        <a href="index.php">Ga weer terug als gast &#8617;</a>
+    </article>
     <article class="wrapper">
         <article class="form-holder">
             <h2>Inloggen</h2>

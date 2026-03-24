@@ -17,11 +17,14 @@ export default class Calendar {
 
         const dagNummer = String(parseInt(activity.date.split("-")[2]));
 
+        // die HTML templates
+
         if (day.textContent.trim() === dagNummer) {
             const activityElement = document.createElement("article");
             activityElement.classList.add("calendar-activity");
-            activityElement.innerHTML = `${activity.name}<br>
-                                         ${activity.time}`;
+            activityElement.innerHTML = `<span class="activiteit-naam"> ${activity.name}</span>
+                                         <span class="activiteit-naam"> ${activity.time}</span>
+                                         <span class="activiteit-naam"> ${activity.type}</span>`
             activityElement.addEventListener("click", (e) => {
                 e.stopPropagation();
                 this.openDetail(activity);

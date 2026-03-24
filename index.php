@@ -25,7 +25,7 @@
 </header>
 
 <article class="filters">
-  <input type="text" placeholder="Zoek activiteit...">
+  <input type="text" id="search-input" placeholder="Zoek activiteit...">
   <select>
     <option>Alle types</option>
     <option>Binnen</option>

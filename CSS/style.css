@@ -424,15 +424,16 @@ nav a:hover {
 
 .calendar-activity {
   background: linear-gradient(135deg, #81e4e7, #5ccfd3);
-/* Alle teksten in de popup zwart */
-#day-popup {
-    color: #000000; /* Zorgt dat alle tekst in de popup zwart is */
 }
+#day-popup {
+    color: #000000; 
+}
+
 
 #day-popup h2,
 #day-popup p,
 #day-popup label {
-    color: #414141de; /* specifiek voor kopjes, labels en datum */
+    color: #414141de; 
 }
 
 .calendar-activity{
@@ -485,4 +486,34 @@ nav a:hover {
 #close-detail:hover {
     color: red;
     transform: scale(1.2);
+}
+
+/* filteren */
+
+.filters {
+    position: relative; /* belangrijke stap! */
+}
+
+#zoek-resultaten {
+    position: absolute;        /* positie gebaseerd op .filters */
+    top: 65%;                 /* direct onder het inputvak */
+    left: 50;
+    width: 10%;               /* breedte gelijk aan de filters container */
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 100;
+}
+
+#zoek-resultaten article {
+    padding: 5px 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    color: black;
+}
+
+#zoek-resultaten article:hover {
+    background-color: #f0f0f0;
 }

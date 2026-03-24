@@ -26,12 +26,6 @@
 
 <article class="filters">
   <input type="text" id="search-input" placeholder="Zoek activiteit...">
-  <select>
-    <option>Alle types</option>
-    <option>Binnen</option>
-    <option>Buiten</option>
-  </select>
-  <button>Filter</button>
 </article>
 
 <article class="calendar">

@@ -24,7 +24,6 @@ class Uitnodiging {
         }
     }
 
-    // Bouwt basically de email en stuurt hem met de php.ini informatie
     private function stuurEmail($email, $activiteit) {
         $naam         = htmlspecialchars($activiteit['naam']);
         $datum        = htmlspecialchars($activiteit['datum']);
@@ -35,16 +34,15 @@ class Uitnodiging {
 
         $bericht = "
         <html>
-        <body style='font-family: Arial, sans-serif; padding: 20px;'>
+        <body style='font-family: Gill Sans Extrabold, sans-serif; padding: 20px;'>
             <h2>Je bent uitgenodigd voor een activiteit</h2>
             <p>Er is een activiteit gepland waar je bij kunt zijn:</p>
             <table style='border-collapse: collapse;'>
-                <tr><td style='padding: 6px 12px;'><strong>Activiteit:</strong></td><td>{$naam}</td></tr>
-                <tr><td style='padding: 6px 12px;'><strong>Datum:</strong></td><td>{$datum}</td></tr>
-                <tr><td style='padding: 6px 12px;'><strong>Tijd:</strong></td><td>{$tijd}</td></tr>
-                <tr><td style='padding: 6px 12px;'><strong>Beschrijving:</strong></td><td>{$beschrijving}</td></tr>
+                <tr><td style='padding: 6px 12px;'>Activiteit:</td><td>{$naam}</td></tr>
+                <tr><td style='padding: 6px 12px;'>Datum:</td><td>{$datum}</td></tr>
+                <tr><td style='padding: 6px 12px;'>Tijd:</td><td>{$tijd}</td></tr>
+                <tr><td style='padding: 6px 12px;'>Beschrijving:</td><td>{$beschrijving}</td></tr>
             </table>
-            <br>
             <p>Ga naar de website om jezelf aan te melden aan de activiteit.</p>
         </body>
         </html>";

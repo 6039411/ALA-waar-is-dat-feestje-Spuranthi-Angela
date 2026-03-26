@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 require_once '../autoloader.php';
  
@@ -15,5 +14,4 @@ $conn       = Database::connect();
 $aanmelding = new Aanmelding($conn);
  
 echo json_encode(['aangemeld' => $aanmelding->isAangemeld($activiteit_id, $user_id)]);
-
 ?>

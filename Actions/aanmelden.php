@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 require_once '../autoloader.php';
 
@@ -35,5 +34,4 @@ if ($actie === 'aanmelden') {
 } else {
     echo json_encode(['succes' => false, 'bericht' => 'Geen idee wat er aan de hand is man']);
 }
-
 ?>

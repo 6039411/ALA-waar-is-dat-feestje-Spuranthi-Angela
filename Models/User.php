@@ -1,5 +1,5 @@
 <?php
-class User {
+abstract class User {
     private $table_name = "user";
     private $conn;
 
@@ -14,6 +14,8 @@ class User {
 
     function insert($data) {
         try {
+            $data[1] = self::hashPassword($data[1]);
+            
             $sql = 'INSERT INTO ' . $this->table_name . ' 
                     (user_name, user_password, user_full_name, user_email) 
                     VALUES (?, ?, ?, ?)';
@@ -57,6 +59,10 @@ class User {
             'user_email' => $this->user_email,
             'user_full_name' => $this->user_full_name
         ];
+    }
+
+    public static function hashPassword($password) {
+    return password_hash($password, PASSWORD_DEFAULT);
     }
 }
 

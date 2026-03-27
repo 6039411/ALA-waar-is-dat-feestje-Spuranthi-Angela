@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             util::redirect("../registreren.php", "error", $em, $data);
         }
     }
-}else{
+    }else{
     $em = "Er is een fout opgetreden.";
     util::redirect("../registreren.php", $type, $em);
     header("Location: ?error=$em");

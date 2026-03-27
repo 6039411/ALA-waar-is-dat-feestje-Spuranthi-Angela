@@ -320,6 +320,46 @@ nav a:hover {
   max-width: 600px;
 }
 
+
+.detail-content button {
+  display: flex;
+  flex-direction: row;
+  background: #fcff67;
+  width: 50%;
+  padding: 10px;
+  outline: none;
+  font-size: 15px;
+  border-radius: 5px;
+}
+.detail-content button:hover{
+  background-color: #fcff38;
+  cursor: pointer;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+#aanmelden{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2px;
+  margin-right: 5px;
+}
+
+#uitnodiging{
+  display: flex;
+  flex-direction: row;
+}
+#uitnodiging button{
+  margin-right: 2px;
+}
+#uitnodiging input{
+  width: 50%;
+  padding: 10px;
+  outline: none;
+  font-size: 15px;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+
 /* Animatie */
 #day-popup.active .popup-content,
 .activity-detail.active .detail-content {

@@ -8,3 +8,5 @@ $activiteit = new Activiteit($conn);
 $data = $activiteit->getAll();
 
 echo json_encode($data);
+
+?>

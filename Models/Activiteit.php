@@ -1,5 +1,4 @@
 <?php
-
 class Activiteit {
 
     private $conn;
@@ -16,7 +15,10 @@ class Activiteit {
                     VALUES (?, ?, ?, ?, ?)";
 
             $stmt = $this->conn->prepare($sql);
-            return $stmt->execute($data);
+            if ($stmt->execute($data)) {
+                return $this->conn->lastInsertId();
+            }
+            return false;
 
         } catch (PDOException $e) {
             echo $e->getMessage();
@@ -24,13 +26,11 @@ class Activiteit {
         }
     }
 
-    // niew toegevoegd
     function getAll() {
         try {
-            $sql = "SELECT * FROM " . $this->table_name;
+            $sql  = "SELECT * FROM " . $this->table_name;
             $stmt = $this->conn->prepare($sql);
             $stmt->execute();
-
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         } catch (PDOException $e) {
@@ -38,4 +38,20 @@ class Activiteit {
             return [];
         }
     }
+
+    function getById($id) {
+        try {
+            $sql = "SELECT id, Naam AS naam, Datum AS datum, Tijd AS tijd, Beschrijving AS beschrijving
+                    FROM " . $this->table_name . "
+                    WHERE id = ?";
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([$id]);
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+
+        } catch (PDOException $e) {
+            return false;
+        }
+    }
 }
+?>

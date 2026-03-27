@@ -25,7 +25,7 @@
 </header>
 
 <article class="filters">
-  <input type="text" id="search-input" placeholder="Zoek activiteit...">
+  <input type="text" id="search-input" placeholder="Zoek activiteit...">-
 </article>
 
 <article class="calendar">
@@ -111,6 +111,9 @@
     <p>Bekijk recente meldingen.</p>
   </article>
   </article>
+    <section id="dashboard">
+    <div id="dashboard-list"></div>
+  </section>
 </article>
 
 
@@ -160,6 +163,7 @@
     <h2 id="detail-name"></h2>
 
     <p><strong>Type:</strong> <span id="detail-type"></span></p>
+    <p><strong>Datum:</strong> <span id="detail-date"></span></p>
     <p><strong>Tijd:</strong> <span id="detail-time"></span></p>
     <p><strong>Status:</strong> <span id="detail-status"></span></p>
     <p><strong>Beschrijving:</strong></p>

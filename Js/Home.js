@@ -10,8 +10,8 @@ class SpecialActivity extends Activity {
 
     // methode die parent info uitbreidt
     info() {
-        return `${super.name} (${super.type}) op ${super.date} bij ${this.location}`;
-    }
+    return `${this.name} (${this.type}) op ${this.date} bij ${this.location}`;
+    }      
 
     // static method
     static description() {
@@ -31,6 +31,7 @@ const days = document.querySelectorAll(".day");
 const closeDetail = document.getElementById("close-detail");
 const currentMonth = document.getElementById("current-month");
 const dropdown = document.getElementById("month-dropdown");
+let selectedMonth = new Date().getMonth() + 1;
 
 
 // activiteit opslaan
@@ -93,9 +94,14 @@ currentMonth.addEventListener("click", () => {
         dropdown.style.display === "block" ? "none" : "block";
 });
 
-dropdown.querySelectorAll("article").forEach(item => {
+dropdown.querySelectorAll("article").forEach((item, index) => {
     item.addEventListener("click", () => {
         currentMonth.textContent = item.dataset.month;
+
+        selectedMonth = index + 1;
+
+        console.log("Nieuwe maand:", selectedMonth); // check
+
         dropdown.style.display = "none";
     });
 });
@@ -113,8 +119,7 @@ days.forEach(dag => {
         const dagNummer = dag.innerText.trim();
         const vandaag = new Date();
         const jaar = vandaag.getFullYear();
-        const maand = vandaag.getMonth() + 1;
-
+        const maand = selectedMonth;
         const maandFormatted = String(maand).padStart(2, "0");
         const dagFormatted = String(dagNummer).padStart(2, "0");
         const datum = `${jaar}-${maandFormatted}-${dagFormatted}`;

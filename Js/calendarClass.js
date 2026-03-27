@@ -31,13 +31,25 @@ export default class Calendar {
             });
 
             day.appendChild(activityElement);
+
+            // dashboard 
+            const dashboard = document.getElementById("dashboard-list");
+            const clone = activityElement.cloneNode(true);
+
+            clone.addEventListener("click", () => {
+                this.openDetail(activity);
+            });
+
+            dashboard.appendChild(clone);
         }
     });
 }
 
+
     openDetail(activity){
         document.getElementById("detail-name").textContent = activity.name;
         document.getElementById("detail-type").textContent = activity.type;
+        document.getElementById("detail-date").textContent = activity.date;
         document.getElementById("detail-time").textContent = activity.time;
         document.getElementById("detail-status").textContent = activity.status;
         document.getElementById("detail-description").textContent = activity.description;

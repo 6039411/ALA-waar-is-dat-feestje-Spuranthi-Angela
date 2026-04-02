@@ -28,10 +28,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $em = "Wachtwoorden komen niet overeen.";
         util::redirect("../registreren.php", "error", $em, $data);
     } else{
-        $user = new RegularUser($conn);
+        $user = new RegularUser();
 
-        $pass = password_hash($password, PASSWORD_DEFAULT);
-        $user_data = [$username, $pass, $fullname, $email];
+        $user_data = [$username, $password, $fullname, $email];
         $res = $user->insert($user_data);
         if($res){
             $sm = "Gelukt! U kunt nu inloggen met uw account.";

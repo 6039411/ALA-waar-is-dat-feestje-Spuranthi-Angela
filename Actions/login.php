@@ -15,10 +15,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $em = "Ongeldige Wachtwoord.";
         util::redirect("../inloggen.php", "error", $em);
     }else{
-        $user = new RegularUser($conn);
+        $user = new RegularUser();
         $auth = $user->auth($username, $password);
         
-        echo($auth);
+
         if($auth){
             $user_data = $user->getUser();
             $_SESSION['user_name'] = $user_data['user_name'];

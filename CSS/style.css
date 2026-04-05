@@ -587,3 +587,29 @@ nav a:hover {
   max-width: 300px;        
   width: auto;           
 }
+
+.bericht-sectie {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+}
+.bericht-sectie form {
+    display: flex;
+    gap: 10px;
+}
+.bericht-sectie input[type=text] {
+    flex: 1;
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+.bericht-sectie button {
+    padding: 8px 18px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.bericht-ok {
+    color: green;
+    margin-bottom: 10px;
+}

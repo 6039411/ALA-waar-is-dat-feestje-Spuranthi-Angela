@@ -1,6 +1,14 @@
 <?php 
 session_start();
-session_destroy(); 
+session_destroy();
+require_once 'autoloader.php';
+$bericht_verstuurd = false;
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['bericht'])) {
+    $conn    = Database::connect();
+    $bericht = new Bericht($conn);
+    $tekst   = htmlspecialchars(trim($_POST['bericht']));
+    $bericht_verstuurd = $bericht->opslaan($tekst, 1);
+}
 ?>
 
 <!DOCTYPE html>
@@ -186,6 +194,17 @@ session_destroy();
     </span>
 
   </div>
+</article>
+
+<article class="bericht-sectie">
+  <h2>Stuur een bericht</h2>
+  <?php if ($bericht_verstuurd): ?>
+      <p class="bericht-ok">Bericht verstuurd!</p>
+  <?php endif; ?>
+  <form method="POST" action="">
+      <input type="text" name="bericht" placeholder="Typ hier je bericht..." required>
+      <button type="submit">Verstuur</button>
+  </form>
 </article>
 
 </body>

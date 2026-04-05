@@ -3,6 +3,7 @@
 
 spl_autoload_register(function($classname) {
     $mappen = [
+        __DIR__ . '/Interfaces/',
         __DIR__ . '/Includes/',
         __DIR__ . '/Models/',
         __DIR__ . '/Actions/',

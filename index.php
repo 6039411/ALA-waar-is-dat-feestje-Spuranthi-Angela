@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -12,7 +14,7 @@
   <script type="module" src="Js/Home.js"></script>
   <script type="module" src="Js/WeerApi.js"></script>
 </head>
-<body>
+<body data-ingelogd="<?php echo isset($_SESSION['user_id']) ? 'true' : 'false'; ?>"></body>
 
 <header>
   <h1>Activiteiten Kalender</h1>

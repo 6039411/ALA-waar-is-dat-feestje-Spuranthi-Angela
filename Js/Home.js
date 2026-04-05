@@ -27,6 +27,7 @@ const closeDetail = document.getElementById("close-detail");
 const currentMonth = document.getElementById("current-month");
 const dropdown = document.getElementById("month-dropdown");
 let selectedMonth = new Date().getMonth() + 1;
+const isLoggedIn = document.body.dataset.ingelogd === "true";
 
 
 
@@ -157,6 +158,10 @@ document.addEventListener("click", (e) => {
 // popup voor elke dag
 days.forEach(dag => {
     dag.addEventListener("click", () => {
+        if (!isLoggedIn) {
+            alert("Je moet eerst inloggen om een activiteit aan te maken");
+            return;
+        }
         const dagNummer = dag.innerText.trim();
         const vandaag = new Date();
         const jaar = vandaag.getFullYear();

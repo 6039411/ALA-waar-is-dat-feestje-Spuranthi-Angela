@@ -1,6 +1,5 @@
+<?php session_start(); ?>
 <?php 
-session_start();
-session_destroy();
 require_once 'autoloader.php';
 $bericht_verstuurd = false;
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['bericht'])) {
@@ -30,9 +29,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['bericht'])) {
 <header>
   <h1>Activiteiten Kalender</h1>
   <nav>
-    <a href="index.php">Home</a>
-    <a href="inloggen.php">Inloggen</a>
-    <a href="registreren.php">Registreren</a>
+  <a href="index.php">Home</a>
+
+  <?php if(isset($_SESSION['user_id'])): ?>
+      <a href="logout.php">Uitloggen</a>
+  <?php else: ?>
+      <a href="inloggen.php">Inloggen</a>
+      <a href="registreren.php">Registreren</a>
+  <?php endif; ?>
   </nav>
 </header>
 
@@ -207,5 +211,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['bericht'])) {
   </form>
 </article>
 
+
+
 </body>
 </html>
+

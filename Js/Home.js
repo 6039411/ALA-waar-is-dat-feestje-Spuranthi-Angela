@@ -142,7 +142,7 @@ dropdown.querySelectorAll("article").forEach((item, index) => {
 
         selectedMonth = index + 1;
 
-        console.log("Nieuwe maand:", selectedMonth); // check
+        console.log("Nieuwe maand:", selectedMonth); 
 
         dropdown.style.display = "none";
     });
